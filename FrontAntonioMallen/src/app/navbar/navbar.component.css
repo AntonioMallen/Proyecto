@@ -1,0 +1,29 @@
+
+.logo{
+    margin-right: 8%;
+}
+.navbarButtons{
+    color:rgb(188, 0, 0)!important;
+    border-bottom: 2px solid rgb(255, 171, 0) ;
+    text-decoration:none;
+}
+.navbarButtons:hover{
+    color:rgb(139, 0, 0)!important;
+}
+.navbar{
+    margin-top: 20%;
+    background-color: white;
+    width: 70%;
+    height: 10%;
+    display: flex;
+    margin:auto;
+    justify-content: space-around;
+}
+.linea{
+    width: 70%;
+    height: 2%;
+    margin-left: 15%;
+    margin-bottom: 1%;
+
+}
+

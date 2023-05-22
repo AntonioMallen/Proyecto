@@ -1,0 +1,37 @@
+<!--<div class="background">
+  <div class="shape"></div>
+  <div class="shape"></div>
+</div>-->
+
+<link href='https://fonts.googleapis.com/css?family=Chewy' rel='stylesheet'>
+  <form class="login">
+    
+    <img class="icono" src="../../assets/login.webp"  alt="loginIco"/>
+    <h3>Login</h3>
+  
+    <label class="labelLogin" for="username">Email</label>
+    <input type="text" id ="userName" placeholder="Introduce tu correo:" required #usernameLogin>
+  
+    <label class="labelLogin" for="password">Password</label>
+    <input type="password" id ="password" placeholder="Introduce tu contraseña:" #passwordLogin required>
+  
+    <button type='button' style="color: black" (click)="onLogin(usernameLogin.value, passwordLogin.value)">Log In</button>
+    
+  </form>
+
+  <form class="register">
+    <img class="iconoRegister" src="../../assets/register.png"  alt="registerIco"/>
+    <h3>Register</h3>
+
+    <label class="labelRegister" for="email">Email</label>
+    <input type="text" id ="emailRegister" placeholder="Introduce tu correo:" #emailRegister required>
+  
+    <label class="labelRegister" for="username">Username</label>
+    <input type="text" id ="usernameRegister" placeholder="Introduce tu nombre:" #usernameRegister required>
+  
+    <label class="labelRegister" for="password">Password</label>
+    <input type="password" id ="passwordRegister" placeholder="Introduce tu contraseña:" #passwordRegister required>
+  
+    <button type='button' style="color: black" (click)="onRegister(emailRegister.value, usernameRegister.value, passwordRegister.value)">Register</button>
+    
+  </form>
