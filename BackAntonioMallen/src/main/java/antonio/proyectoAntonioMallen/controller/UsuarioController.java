@@ -23,9 +23,9 @@ public class UsuarioController {
     public ResponseEntity consultarUsuarios(){
         return new ResponseEntity<>(usuarioService.consultarUsuarios(), HttpStatus.OK);
     }
-    @GetMapping("/getEmail")
-    public ResponseEntity consultarCorreo(@RequestBody String correo){
-        return new ResponseEntity<>(usuarioService.consultarCorreo(correo), HttpStatus.OK);
+    @PostMapping(value = "/getEmail", consumes = "text/plain")
+    public ResponseEntity<?> consultarCorreo(@RequestBody String correo){
+        return new ResponseEntity<>(usuarioService.consultarCorreo(correo),HttpStatus.OK);
     }
     @PostMapping(value = "/add", consumes = "application/json")
     public ResponseEntity<?> anadirUsuario(@RequestBody Usuario usuario){

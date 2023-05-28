@@ -10,7 +10,8 @@
     <h3>Login</h3>
   
     <label class="labelLogin" for="username">Email</label>
-    <input type="text" id ="userName" placeholder="Introduce tu correo:" required #usernameLogin>
+    <input type="text" matInput id ="userName" placeholder="Introduce tu correo:" [formControl]="email" required #usernameLogin>
+    <mat-error *ngIf="pulsadoLogin">{{getErrorMessage()}}</mat-error>
   
     <label class="labelLogin" for="password">Password</label>
     <input type="password" id ="password" placeholder="Introduce tu contraseña:" #passwordLogin required>
@@ -24,7 +25,8 @@
     <h3>Register</h3>
 
     <label class="labelRegister" for="email">Email</label>
-    <input type="text" id ="emailRegister" placeholder="Introduce tu correo:" #emailRegister required>
+    <input type="text" matInput id ="emailRegister" placeholder="Introduce tu correo:" [formControl]="email" #emailRegister required>
+    <mat-error *ngIf="pulsadoRegister">{{getErrorMessage()}}</mat-error>
   
     <label class="labelRegister" for="username">Username</label>
     <input type="text" id ="usernameRegister" placeholder="Introduce tu nombre:" #usernameRegister required>

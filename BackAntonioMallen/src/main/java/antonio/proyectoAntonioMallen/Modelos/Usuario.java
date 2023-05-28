@@ -17,7 +17,6 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String nombre;
-
     private String correo;
     private String password;
     @OneToMany

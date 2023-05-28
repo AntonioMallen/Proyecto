@@ -1,5 +1,109 @@
-<br>
-<mat-card class="demo-inline-calendar-card">
-    <mat-calendar [(selected)]="selected"></mat-calendar>
-  </mat-card>
-  <p>Selected date: {{selected}}</p>
+<link href='https://fonts.googleapis.com/css?family=Chewy' rel='stylesheet'>
+<div class="todo">
+  <div>
+    <h1>Contacto</h1>
+    <div class="info">
+      
+      
+      <div class="element">
+        <mat-icon class="iconos" fontIcon="location_on"></mat-icon> 
+        <a class="text">Aragon 74, Montalban, Teruel</a>
+      </div>
+      <br>
+      <div class="element">
+        <mat-icon class="iconos" fontIcon="phone"></mat-icon> 
+        <a class="text">+34 622 64 66 30</a>
+      </div>
+      <br>
+      <div class="element">
+        <mat-icon class="iconos" fontIcon="email"></mat-icon> 
+        <a class="text">aa21.amallen98@iespabloserrano.com</a>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="recuadro">
+    
+    <h1>Reserva</h1>
+    <div class="elementos">
+      
+      <div class="izquierda">
+        <div>
+          <div class="comensales">
+            <mat-icon class="iconos" fontIcon="people"></mat-icon> 
+            <mat-form-field class="introducirComensales" >
+              <mat-label >Introduce Nº comensales</mat-label>
+              <input matInput required>
+            </mat-form-field>
+            
+          </div>
+          <div class="menus">
+            <div class="menu1">
+              <mat-icon class="suma" (click)="anadirMenu('Menu1')" fontIcon="add_circle_outline"></mat-icon>
+              <mat-icon class="rest" (click)="quitarMenu('Menu1')" fontIcon="remove_circle_outline"></mat-icon>
+              <p>Menu 1</p>
+            </div>
+            <br>
+            <div class="menu1">
+              <mat-icon class="suma" (click)="anadirMenu('Menu2')" fontIcon="add_circle_outline"></mat-icon>
+              <mat-icon class="rest" (click)="quitarMenu('Menu2')" fontIcon="remove_circle_outline"></mat-icon>
+              <p>Menu 2</p>
+            </div>
+            <br>
+            <div class="menu1">
+              <mat-icon class="suma" (click)="anadirMenu('Menu3')" fontIcon="add_circle_outline"></mat-icon>
+              <mat-icon class="rest" (click)="quitarMenu('Menu3')" fontIcon="remove_circle_outline"></mat-icon>
+              <p>Menu 3</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+      <div class="derecha"> 
+        <div class="encimaCal">
+          <p>Elija una fecha</p>
+        </div>
+        <div class="horizonal">
+          <div class="horas">
+            <mat-button-toggle-group (click)="elegirHora()" class="grupoBotones" name="fontStyle" [(ngModel)]="horaSeleccionada" aria-label="Font Style">
+              <mat-button-toggle value={{this.horarioReal.at(0)}}>{{this.horarioReal.at(0)}}</mat-button-toggle>
+              <mat-button-toggle value={{this.horarioReal.at(1)}}>{{this.horarioReal.at(1)}}</mat-button-toggle>
+              <mat-button-toggle value={{this.horarioReal.at(2)}}>{{this.horarioReal.at(2)}}</mat-button-toggle>
+              <mat-button-toggle value={{this.horarioReal.at(3)}}>{{this.horarioReal.at(3)}}</mat-button-toggle>
+              <mat-button-toggle value={{this.horarioReal.at(4)}}>{{this.horarioReal.at(4)}}</mat-button-toggle>
+            </mat-button-toggle-group>
+           
+          </div>
+          <div class="calendarioSpinner">
+            <div class="calendario">
+              <mat-card >
+                <mat-calendar [(selected)]="selected"></mat-calendar>
+              </mat-card>
+            </div>
+            <div class="menuHorario">
+              <button class="seleccion" mat-button [matMenuTriggerFor]="aboveMenu">Horario</button>
+              <mat-menu  #aboveMenu="matMenu">
+                  <mat-button-toggle-group class="grupoBotonesAbajo" [formControl]="horarioControl" name="fontStyle" aria-label="Font Style">
+                    <mat-button-toggle (click)="elegirHorario()" value="Comida">Comida</mat-button-toggle>
+                    <mat-button-toggle (click)="elegirHorario()" value="Cena">Cena</mat-button-toggle>
+                  </mat-button-toggle-group>
+              </mat-menu>
+            </div>
+          </div>
+        </div>
+        
+        
+      </div>
+      
+    </div>
+    <div class="reserva"> 
+      <button (click)="reservar()" class="reservaButton" type='reservaButton' mat-button style="color: black" >Reservar</button>
+    </div>
+    
+  </div>
+  
+  
+</div>
+

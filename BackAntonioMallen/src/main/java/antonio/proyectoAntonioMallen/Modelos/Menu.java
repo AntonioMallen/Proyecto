@@ -18,4 +18,5 @@ public class Menu {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String nombre;
+    private double precio;
 }
