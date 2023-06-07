@@ -1,1 +1,28 @@
-<p>carta works!</p>
+<link href='https://fonts.googleapis.com/css?family=Chewy' rel='stylesheet'>
+<div class="todo">
+    <div *ngFor="let menu of this.menus" >
+        <h1>{{menu.nombre}}</h1>
+        <h2>Primeros</h2>
+        <ul>
+            <li *ngFor="let primeros of menu.primeros">
+                {{primeros}}
+            </li>
+        </ul>
+        <br>
+        <h2>Segundos</h2>
+        <ul>
+            <li *ngFor="let segundos of menu.segundos">
+                {{segundos}}
+            </li>
+        </ul>
+        <br>
+        <h2>Postres</h2>
+        <ul>
+            <li *ngFor="let postres of menu.postres">
+                {{postres}}
+            </li>
+        </ul>
+
+        <h2>Precio: {{menu.precio}}</h2>
+    </div>
+</div>

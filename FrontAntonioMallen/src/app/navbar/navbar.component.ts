@@ -34,5 +34,8 @@ export class NavbarComponent {
     this.userService.exit()
     this.router.navigate(['/home'])
   }
+  misReservas(){
+    this.router.navigate(['/misReservas'])
+  }
   
 }

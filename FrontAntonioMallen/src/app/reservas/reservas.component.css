@@ -35,9 +35,9 @@ h1{
   margin-left: 20%;
   margin-top: 5%;
   margin-right: 20%;
+  min-width: fit-content;
   border-width: 4px;
   border-color: rgb(253, 170, 0);
-  
   padding-bottom: 5%;
 }
 .elementos{
@@ -101,6 +101,7 @@ input{
   display: flex;
   flex-direction: column;
   gap: 8%;
+  box-shadow: ;
 }
 .button{
   width: 200%;
@@ -168,4 +169,7 @@ input{
   display: flex;
   justify-content: center;
   margin-top: 4%;
+}
+.mat-button-toggle-group{
+  border: 0;
 }

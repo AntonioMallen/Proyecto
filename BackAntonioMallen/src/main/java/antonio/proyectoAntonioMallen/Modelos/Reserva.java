@@ -7,6 +7,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+import java.util.List;
+
 @Data
 @Builder
 @NoArgsConstructor
@@ -16,10 +18,12 @@ import java.util.Date;
 public class Reserva {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-    private Date fechaReserva;
+    private Long id_reserva;
+    private Long id_usuario;
+    private Date fechaReserva; // Dia, hora
     private int comensales;
-    private String comentario;
-    @ManyToMany
-    private Menu menus[];
+    //@JoinColumn(name="id_menu")
+    //@OneToMany(cascade = CascadeType.ALL)
+    private int[] id_menu;
+    private int[] cantMenu;
 }

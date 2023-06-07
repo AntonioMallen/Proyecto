@@ -6,6 +6,7 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 import * as shajs from 'sha.js';
 import { userService } from '../userService';
 import {FormControl, Validators} from '@angular/forms';
+import { firstValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -13,8 +14,6 @@ import {FormControl, Validators} from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  
-  //users: User[]=[];
   mensaje: String="";
   email = new FormControl('', [Validators.required, Validators.email]);
   pulsadoLogin=false
@@ -23,20 +22,21 @@ export class LoginComponent {
   
   
   constructor(private router: Router, private http:HttpClient,private _snackBar: MatSnackBar, private userService: userService) {
-    /*const req=this.http.get<User[]>('http://localhost:8080/usuarios/all')
-    req.subscribe(res=>{
-      this.users=res;
-    })*/
   }
-  onLogin(email:string,password:string){
-    var user:User| null =this.getUser(email)
+
+
+  async onLogin(email:string,password:string){
+    var user:User| null = await this.getUser(email)
     this.pulsadoLogin=true;
     let mensaje=this.getErrorMessage();
+    
     if(mensaje==''){
-      this.encryptar(password);
+
       if(email!="" && password !=""){
         let aux: string=''
+
         if(user){
+          
           if(user.correo==email && aux!='ok' && aux!='cn'){
             var passwordEncrypted=this.encryptar(password);
             
@@ -53,24 +53,25 @@ export class LoginComponent {
             (<HTMLInputElement>document.getElementById("userName")).value="";
             (<HTMLInputElement>document.getElementById("password")).value="";
             
-            //this.eventoUsuario.emit(value)
             this.userService.setUser(user)
             this.router.navigate(['/home'])
           }else if(aux=='cn'){
-            this._snackBar.open("Contraseña incorrecta", "Cerrar");
+            this._snackBar.open("Contraseña incorrecta", "Cerrar",{duration:3000});
           }else{
-            this._snackBar.open("Correo no encontrado", "Cerrar");
+            this._snackBar.open("Correo no encontrado", "Cerrar",{duration:3000});
           }
+          
         }
         
       }else{
-        this._snackBar.open("Todos los campos deben ser rellenados", "Cerrar");
+        this._snackBar.open("Todos los campos deben ser rellenados", "Cerrar",{duration:3000});
       }
       
     }
   }
-  onRegister(email:string, username:string, password:string){
-    var user:User| null =this.getUser(email)
+  async onRegister(email:string, username:string, password:string){
+    var user = await this.getUser(email)
+    
     this.pulsadoRegister=true;
     let mensaje=this.getErrorMessage();
     if(mensaje==''){
@@ -84,35 +85,36 @@ export class LoginComponent {
         if(email!="" && username !="" && password !=""){
           
           var passwordEncrypted=this.encryptar(password);
-          /*let body={
+          let body={
             "nombre": username,
             "correo": email,
             "password": passwordEncrypted,
             "reservas": [],
             "rol": "user",
           }
-          const req=this.http.post('http://localhost:8080/usuarios/add',body,{}).pipe()
-          req.subscribe();*/
+          const req=await this.http.post('http://localhost:8080/usuarios/add',body,{});
+          await firstValueFrom(req)
+          await this.onLogin(email,password);
           
           (<HTMLInputElement>document.getElementById("emailRegister")).value="";
           (<HTMLInputElement>document.getElementById("usernameRegister")).value="";
           (<HTMLInputElement>document.getElementById("passwordRegister")).value="";
-          this._snackBar.open("Cuenta creada correctamente", "Cerrar");
+          this._snackBar.open("Cuenta creada correctamente", "Cerrar",{duration:3000});
         }else{
-          this._snackBar.open("Todos los campos deben ser rellenados", "Cerrar");
+          this._snackBar.open("Todos los campos deben ser rellenados", "Cerrar",{duration:3000});
         }
         
       }else{
-        this._snackBar.open("Correo ya registrado", "Cerrar");
+        this._snackBar.open("Correo ya registrado", "Cerrar",{duration:3000});
       }
     }
   }
   
-  getUser(email:string):any{
-    const req=this.http.post('http://localhost:8080/usuarios/getEmail',email,{}).pipe()
-    req.subscribe(res=>{
-      return res;
-    })
+   async getUser(email:string):Promise<any>{
+    
+    var user= this.http.post('http://localhost:8080/usuarios/getEmail',email,{});
+    
+    return await firstValueFrom(user);
   }
   
   encryptar(palabra:string): string{

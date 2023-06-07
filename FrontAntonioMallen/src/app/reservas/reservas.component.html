@@ -34,28 +34,20 @@
             <mat-icon class="iconos" fontIcon="people"></mat-icon> 
             <mat-form-field class="introducirComensales" >
               <mat-label >Introduce Nº comensales</mat-label>
-              <input matInput required>
+              <input #comensales matInput required>
             </mat-form-field>
             
           </div>
           <div class="menus">
-            <div class="menu1">
-              <mat-icon class="suma" (click)="anadirMenu('Menu1')" fontIcon="add_circle_outline"></mat-icon>
-              <mat-icon class="rest" (click)="quitarMenu('Menu1')" fontIcon="remove_circle_outline"></mat-icon>
-              <p>Menu 1</p>
+            
+            <div *ngFor="let menu of this.menus" class="menu1">
+              <mat-icon class="suma" (click)="anadirMenu( menu.nombre ,comensales.value)" fontIcon="add_circle_outline"></mat-icon>
+              <p>{{this.comensalesMenu.at((menu.id_menu-1))}}</p>
+              <mat-icon class="rest" (click)="quitarMenu( menu.nombre ,comensales.value)" fontIcon="remove_circle_outline"></mat-icon>
+              <p>{{menu.nombre}}</p>
             </div>
             <br>
-            <div class="menu1">
-              <mat-icon class="suma" (click)="anadirMenu('Menu2')" fontIcon="add_circle_outline"></mat-icon>
-              <mat-icon class="rest" (click)="quitarMenu('Menu2')" fontIcon="remove_circle_outline"></mat-icon>
-              <p>Menu 2</p>
-            </div>
-            <br>
-            <div class="menu1">
-              <mat-icon class="suma" (click)="anadirMenu('Menu3')" fontIcon="add_circle_outline"></mat-icon>
-              <mat-icon class="rest" (click)="quitarMenu('Menu3')" fontIcon="remove_circle_outline"></mat-icon>
-              <p>Menu 3</p>
-            </div>
+            
           </div>
         </div>
       </div>
@@ -67,7 +59,7 @@
         </div>
         <div class="horizonal">
           <div class="horas">
-            <mat-button-toggle-group (click)="elegirHora()" class="grupoBotones" name="fontStyle" [(ngModel)]="horaSeleccionada" aria-label="Font Style">
+            <mat-button-toggle-group class="grupoBotones" name="fontStyle" [(ngModel)]="horaSeleccionada" aria-label="Font Style">
               <mat-button-toggle value={{this.horarioReal.at(0)}}>{{this.horarioReal.at(0)}}</mat-button-toggle>
               <mat-button-toggle value={{this.horarioReal.at(1)}}>{{this.horarioReal.at(1)}}</mat-button-toggle>
               <mat-button-toggle value={{this.horarioReal.at(2)}}>{{this.horarioReal.at(2)}}</mat-button-toggle>
@@ -99,7 +91,7 @@
       
     </div>
     <div class="reserva"> 
-      <button (click)="reservar()" class="reservaButton" type='reservaButton' mat-button style="color: black" >Reservar</button>
+      <button (click)="reservar(comensales.value)" class="reservaButton" type='reservaButton' mat-button style="color: black" >Reservar</button>
     </div>
     
   </div>

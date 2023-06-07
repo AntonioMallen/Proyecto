@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @Builder
 @NoArgsConstructor
@@ -20,8 +22,8 @@ public class Usuario {
     private String correo;
     private String password;
     @OneToMany
-    @JoinColumn(name="id_reserva")
-    private Reserva[] reservas;
+    @JoinColumn(name="id_usuario")
+    private List<Reserva> reservas;
     private String rol;
 
 

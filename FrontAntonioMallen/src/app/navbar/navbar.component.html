@@ -10,6 +10,7 @@
     <div *ngIf="logueado; else elseBlock">
         <button mat-button class="navbarButtons" [matMenuTriggerFor]="menu">Hola, {{nombre}}</button>
         <mat-menu #menu="matMenu">
+        <button (click)="misReservas()" mat-menu-item>Mis reservas</button>
         <button (click)="cerrarCuenta()" mat-menu-item>Cerrar cuenta</button>
         <!--<button mat-menu-item>Item 2</button>-->
 </mat-menu>

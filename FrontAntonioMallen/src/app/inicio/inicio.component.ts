@@ -18,6 +18,8 @@ export class InicioComponent {
         this.ruta=aux.at(1)?.toUpperCase()+ aux.substring(2)
         if(this.ruta=="Home"){
           this.ruta="Información"
+        }else if(this.ruta=="MisReservas"){
+          this.ruta="Mis reservas";
         }
       }
   });

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { MatNativeDateModule } from '@angular/material/core';
+import { MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
 import {ReservasComponent} from "./reservas/reservas.component"
 import {NavbarComponent} from "./navbar/navbar.component"
 import { AppRoutingModule } from './app-routing.module';
@@ -25,6 +25,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { ReservasPersonalComponent } from './reservas-personal/reservas-personal.component';
+import {MatTableModule} from '@angular/material/table';
 
 
 @NgModule({
@@ -36,7 +38,8 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
     CartaComponent,
     HorariosComponent,
     LoginComponent,
-    InicioComponent
+    InicioComponent,
+    ReservasPersonalComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -57,9 +60,10 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatTableModule
   ],
-  providers: [],
+  providers: [{provide: MAT_DATE_LOCALE, useValue: 'es-ES'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

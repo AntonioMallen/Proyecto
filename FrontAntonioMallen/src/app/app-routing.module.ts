@@ -5,6 +5,7 @@ import {ReservasComponent} from "./reservas/reservas.component"
 import {LoginComponent} from "./login/login.component"
 import {HorariosComponent} from "./horarios/horarios.component"
 import {CartaComponent} from "./carta/carta.component"
+import {ReservasPersonalComponent} from "./reservas-personal/reservas-personal.component"
 
 const routes: Routes = [
   {path:'home', component: InformacionComponent},
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path:'login', component: LoginComponent},
   {path:'horarios', component: HorariosComponent},
   {path:'reservas', component: ReservasComponent},
+  {path:'misReservas', component: ReservasPersonalComponent},
   {path: '',   redirectTo: 'home', pathMatch: 'full'},
 ];
 
