@@ -1,4 +1,9 @@
-<div *ngIf="!ruta.includes('Login');">
+<div class="centrar" *ngIf="!ruta.includes('Login');">
     
-<b><a class="texto">{{ruta}}</a></b>
+    <div class="tabla" *ngIf="this.horarios else elseBlock" >   
+        <b><a class="info">{{ruta}}</a></b>
+    </div>
+    <ng-template #elseBlock>
+        <b><a class="texto">{{ruta}}</a></b>
+    </ng-template>
 </div>

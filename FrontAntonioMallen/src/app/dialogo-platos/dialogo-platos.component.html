@@ -1,0 +1,85 @@
+
+<div class="todo">
+    <div class="header">
+        <h1 class="titulo">{{this.menu.nombre}}</h1>
+        <div class="cerrar">
+            <button mat-icon-button (click)="closeDialog()" >
+                <mat-icon>close</mat-icon>
+            </button>
+        </div>
+    </div>
+    
+    
+    <mat-dialog-content>
+        
+        <div>
+            <mat-list role="list">
+                <h2>Primeros</h2>
+                <div *ngFor="let plato of this.menu.primeros">
+                    <mat-list-item  role="listitem"><b class="menus">{{plato}}</b> <mat-icon (click)="eliminarPlato(0,plato)" class="iconos" >delete</mat-icon></mat-list-item><!--(click)="deleteMenu(menu.nombre)"-->
+                </div>
+            </mat-list>
+            <div class="introducir">
+                
+                <div class="nombre">
+                    <mat-form-field>
+                        <input matInput placeholder="Nombre del primero" #primero>
+                    </mat-form-field>
+                </div>
+                
+                <div class="enviar">
+                    <mat-icon (click)="guardarPlato(0,primero.value)" class="send">send</mat-icon>
+                </div>
+                
+            </div>
+        </div>
+        <div>
+            <mat-list role="list">
+                <h2>Segundos</h2>
+                <div *ngFor="let plato of this.menu.segundos">
+                    <mat-list-item  role="listitem"><b class="menus">{{plato}}</b> <mat-icon (click)="eliminarPlato(1,plato)" class="iconos" >delete</mat-icon></mat-list-item><!--(click)="deleteMenu(menu.nombre)"-->
+                </div>
+            </mat-list>
+            <div class="introducir">
+                
+                <div class="nombre">
+                    <mat-form-field>
+                        <input matInput placeholder="Nombre del segundo" #segundo>
+                    </mat-form-field>
+                </div>
+                
+                <div class="enviar">
+                    <mat-icon (click)="guardarPlato(1,segundo.value)" class="send">send</mat-icon>
+                </div>
+                
+            </div>
+        </div>
+        <div>
+            <mat-list role="list">
+                <h2>Postres</h2>
+                <div *ngFor="let plato of this.menu.postres">
+                    <mat-list-item  role="listitem"><b class="menus">{{plato}}</b> <mat-icon (click)="eliminarPlato(2,plato)" class="iconos" >delete</mat-icon></mat-list-item><!--(click)="deleteMenu(menu.nombre)"-->
+                </div>
+            </mat-list>
+            <div class="introducir">
+                
+                <div class="nombre">
+                    <mat-form-field>
+                        <input matInput placeholder="Nombre del postre" #postre>
+                    </mat-form-field>
+                </div>
+                
+                <div class="enviar">
+                    <mat-icon (click)="guardarPlato(2,postre.value)" class="send">send</mat-icon>
+                </div>
+                
+            </div>
+        </div>
+    </mat-dialog-content>
+    
+</div>
+<!--
+    mat-dialog-actions>
+    <button mat-raised-button color="primary">Save</button>
+    <button mat-raised-button color="warn">Save</button>
+</mat-dialog-actions-->

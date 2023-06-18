@@ -5,8 +5,8 @@
 
     <a  class="navbarButtons" mat-button routerLink="home">Información</a>
     <a  class="navbarButtons" mat-button routerLink="carta">Carta</a>
-    <a  class="navbarButtons" mat-button routerLink="horarios">Horarios</a>
-    <a  class="navbarButtons" mat-button routerLink="reservas" >Contacto y reservas</a>
+    <a  class="navbarButtons" mat-button routerLink="horarios">Contacto y horarios</a>
+    <a  class="navbarButtons" mat-button routerLink="reservas" >Reservas</a>
     <div *ngIf="logueado; else elseBlock">
         <button mat-button class="navbarButtons" [matMenuTriggerFor]="menu">Hola, {{nombre}}</button>
         <mat-menu #menu="matMenu">

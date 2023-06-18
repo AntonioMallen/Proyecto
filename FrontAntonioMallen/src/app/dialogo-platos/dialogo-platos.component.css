@@ -1,0 +1,58 @@
+.iconos{
+    padding-left: 3%;
+    align-items:center;
+    height: fit-content;
+    width: fit-content;
+    font-size: 250%;
+}
+.mat-icon {
+    
+    vertical-align: middle;
+}
+.menus{
+    font-size: 150%;
+    margin-right: 5%;
+    width:fit-content;
+    height:fit-content;
+    
+}
+.send{
+    margin-top: 10px;
+    height: fit-content;
+    width: fit-content;
+    font-size: 250%;
+    align-items:center;
+}
+mat-form-field{
+    width: 100%!important;
+}
+.nombre{
+    width: 80%!important;
+}
+.enviar{
+    padding-left: 7%;
+    
+}
+.introducir{
+    display: flex;
+    flex-direction: row;
+}
+.todo{
+    display: flex;
+    flex-direction: column;
+}
+.cerrar{
+    display: flex!important;
+    justify-content: right!important;
+}
+.titulo{
+    padding-left: 25px;
+    padding-right: 25px;
+    width: 100%;
+    height: fit-content;
+    color: rgb(102, 102, 102);
+}
+.header{
+    display: flex;
+    flex-direction: row;
+}

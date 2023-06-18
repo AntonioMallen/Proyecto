@@ -12,3 +12,26 @@ h1{
     text-align: center;
     margin-bottom: 4%;
 }
+button{
+    background-color: #ffffff;
+    color: #080710;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    
+  display: flex!important;
+  align-items: center!important;
+  justify-content: center!important;
+  float: right!important;
+}
+.test{
+  
+    display: flex!important;
+    align-items: center!important;
+    justify-content: center!important;
+    float: right!important;
+    padding-bottom: 5%;
+    padding-right: 2%;
+}

@@ -19,3 +19,12 @@ div{
     font-size: 400%;
     margin: 0 auto;
 }
+
+.info{
+    position: absolute;
+    top: 30%;
+    left: 38%;
+    color:white;
+    font-size: 400%;
+    margin: 0 auto;
+}

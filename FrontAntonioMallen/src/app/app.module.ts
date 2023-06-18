@@ -27,6 +27,10 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { ReservasPersonalComponent } from './reservas-personal/reservas-personal.component';
 import {MatTableModule} from '@angular/material/table';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatListModule} from '@angular/material/list';
+import { DialogoMenuComponent } from './dialogo-menu/dialogo-menu.component';
+import { DialogoPlatosComponent } from './dialogo-platos/dialogo-platos.component';
 
 
 @NgModule({
@@ -39,7 +43,9 @@ import {MatTableModule} from '@angular/material/table';
     HorariosComponent,
     LoginComponent,
     InicioComponent,
-    ReservasPersonalComponent
+    ReservasPersonalComponent,
+    DialogoMenuComponent,
+    DialogoPlatosComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -61,7 +67,9 @@ import {MatTableModule} from '@angular/material/table';
     FormsModule,
     ReactiveFormsModule,
     MatButtonToggleModule,
-    MatTableModule
+    MatTableModule,
+    MatDialogModule,
+    MatListModule
   ],
   providers: [{provide: MAT_DATE_LOCALE, useValue: 'es-ES'}],
   bootstrap: [AppComponent]

@@ -119,7 +119,12 @@ public class MenuService {
         return menuRepository.save(menu);
     }
 
-    public void eliminarMenu(Menu menu) {
-        menuRepository.delete(menu);
+    public Menu consultarMenuNombre(String nombre){return menuRepository.consultarMenu(nombre);}
+
+    public void eliminarMenu(String nombre) {
+        if(nombre!=null) {
+            Menu menu = menuRepository.consultarMenu(nombre);
+            menuRepository.delete(menu);
+        }
     }
 }

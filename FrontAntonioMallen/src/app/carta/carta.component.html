@@ -2,27 +2,24 @@
 <div class="todo">
     <div *ngFor="let menu of this.menus" >
         <h1>{{menu.nombre}}</h1>
-        <h2>Primeros</h2>
-        <ul>
-            <li *ngFor="let primeros of menu.primeros">
-                {{primeros}}
-            </li>
-        </ul>
+        <h2 class="centrado">Primeros</h2>
+        
+        <p class="centrado" *ngFor="let primeros of menu.primeros">
+            {{primeros}}
+        </p>
+        <!--ul></ul-->
         <br>
-        <h2>Segundos</h2>
-        <ul>
-            <li *ngFor="let segundos of menu.segundos">
-                {{segundos}}
-            </li>
-        </ul>
+        <h2 class="centrado">Segundos</h2>
+        <p class="centrado" *ngFor="let segundos of menu.segundos">
+            {{segundos}}
+        </p>
         <br>
-        <h2>Postres</h2>
-        <ul>
-            <li *ngFor="let postres of menu.postres">
+        <h2 class="centrado">Postres</h2>
+            <p class="centrado" *ngFor="let postres of menu.postres">
                 {{postres}}
-            </li>
-        </ul>
-
-        <h2>Precio: {{menu.precio}}</h2>
+            </p>
+        
+        <p class="precio centrado">{{menu.precio}} euros</p>
+        <br>
     </div>
 </div>

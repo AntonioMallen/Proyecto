@@ -2,6 +2,7 @@
 <link href='https://fonts.googleapis.com/css?family=Chewy' rel='stylesheet'>
 <div class="tabla" *ngIf="this.admin else elseBlock" >
     <h1>Reservas</h1>
+    <div class="test" ><a mat-raised-button (click)="openMenu()"><b>Menus</b></a></div>
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
       

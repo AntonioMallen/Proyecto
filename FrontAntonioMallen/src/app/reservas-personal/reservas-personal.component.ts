@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { userService } from '../userService';
 import { lastValueFrom } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Router, UrlSerializer } from '@angular/router';
 import { Menu } from '../model/menu';
-import { Reserva } from '../model/Reserva';
+import { DialogoMenuComponent } from '../dialogo-menu/dialogo-menu.component';
+import {MatDialog} from '@angular/material/dialog';
+
 
 @Component({
   selector: 'app-reservas-personal',
@@ -20,7 +22,7 @@ export class ReservasPersonalComponent implements OnInit{
   precio:number=0;
   admin:boolean=false;
   
-  constructor(private http:HttpClient,private userService: userService,private router: Router){
+  constructor(private http:HttpClient,private userService: userService,private router: Router, private matDialog: MatDialog){
     
   }
   async ngOnInit() {
@@ -47,6 +49,13 @@ export class ReservasPersonalComponent implements OnInit{
       
   }
 }
+
+  openMenu(){
+    this.matDialog.open(DialogoMenuComponent,{
+      width:'50%',
+    })
+  }
+
 
   cargarDatos(){
     const req=this.http.get('http://localhost:8080/menus/all');

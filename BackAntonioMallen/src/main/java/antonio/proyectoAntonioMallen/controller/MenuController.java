@@ -30,9 +30,9 @@ public class MenuController {
         return new ResponseEntity<>(menuService.anadirMenu(menu),HttpStatus.OK);
     }
 
-    @PostMapping(value = "/delete", consumes = "application/json")
-    public ResponseEntity<?> deleteReserva(@RequestBody Menu menu){
-        menuService.eliminarMenu(menu);
+    @PostMapping(value = "/delete", consumes = "text/plain")
+    public ResponseEntity<?> deleteReserva(@RequestBody String nombre){
+        menuService.eliminarMenu(nombre);
         return new ResponseEntity<>("",HttpStatus.OK);
     }
 
@@ -47,5 +47,8 @@ public class MenuController {
         String aux[] = todo.split(",");
         return new ResponseEntity<>(menuService.eliminarPlato(aux[1], aux[0], Integer.parseInt(aux[2])),HttpStatus.OK);
     }
-
+    @PostMapping(value = "/getMenuNombre", consumes = "text/plain")
+    public ResponseEntity<?> getMenuNombre(@RequestBody String nombre){
+        return new ResponseEntity<>(menuService.consultarMenuNombre(nombre),HttpStatus.OK);
+    }
 }

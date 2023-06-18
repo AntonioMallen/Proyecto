@@ -1,27 +1,5 @@
 <link href='https://fonts.googleapis.com/css?family=Chewy' rel='stylesheet'>
 <div class="todo">
-  <div>
-    <h1>Contacto</h1>
-    <div class="info">
-      
-      
-      <div class="element">
-        <mat-icon class="iconos" fontIcon="location_on"></mat-icon> 
-        <a class="text">Aragon 74, Montalban, Teruel</a>
-      </div>
-      <br>
-      <div class="element">
-        <mat-icon class="iconos" fontIcon="phone"></mat-icon> 
-        <a class="text">+34 622 64 66 30</a>
-      </div>
-      <br>
-      <div class="element">
-        <mat-icon class="iconos" fontIcon="email"></mat-icon> 
-        <a class="text">aa21.amallen98@iespabloserrano.com</a>
-      </div>
-    </div>
-  </div>
-  
   
   <div class="recuadro">
     
@@ -42,7 +20,7 @@
             
             <div *ngFor="let menu of this.menus" class="menu1">
               <mat-icon class="suma" (click)="anadirMenu( menu.nombre ,comensales.value)" fontIcon="add_circle_outline"></mat-icon>
-              <p>{{this.comensalesMenu.at((menu.id_menu-1))}}</p>
+              <p>{{this.comensalesMenu.at(menu.position)}}</p>
               <mat-icon class="rest" (click)="quitarMenu( menu.nombre ,comensales.value)" fontIcon="remove_circle_outline"></mat-icon>
               <p>{{menu.nombre}}</p>
             </div>

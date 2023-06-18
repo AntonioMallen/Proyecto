@@ -1,0 +1,43 @@
+
+<div class="todo">
+    <div class="header">
+        <h1 class="titulo">Menus</h1>
+        <div class="cerrar">
+            <button mat-icon-button (click)="closeDialog()" >
+                <mat-icon>close</mat-icon>
+            </button>
+        </div>
+    </div>
+    <mat-dialog-content>
+        <div>
+            <mat-list role="list">
+                <div *ngFor="let menu of this.menus">
+                    <mat-list-item  role="listitem"><b (click)="openPlatos(menu.nombre)" class="menus">{{menu.nombre}}</b> <mat-icon class="iconos" (click)="deleteMenu(menu.nombre)">delete</mat-icon></mat-list-item>
+                </div>
+            </mat-list>
+            <div class="introducir">
+                
+                <div class="nombre">
+                    <mat-form-field>
+                        <input matInput placeholder="Nombre del menu" #nombre>
+                    </mat-form-field>
+                </div>
+                <div class="precio">
+                    <mat-form-field>
+                        <input matInput placeholder="Precio del menu" #precio>
+                    </mat-form-field>
+                </div>
+                
+                <div class="enviar">
+                    <mat-icon (click)="createMenu(nombre.value, precio.value)" class="send">send</mat-icon>
+                </div>
+                
+            </div>
+        </div>
+    </mat-dialog-content>
+    
+</div>
+<!--mat-dialog-actions>
+    <button mat-raised-button color="primary">Save</button>
+    <button mat-raised-button color="warn">Save</button>
+</mat-dialog-actions-->
