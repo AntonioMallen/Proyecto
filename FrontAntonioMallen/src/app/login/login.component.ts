@@ -39,7 +39,7 @@ export class LoginComponent {
           
           if(user.correo==email && aux!='ok' && aux!='cn'){
             var passwordEncrypted=this.encryptar(password);
-            
+          
             if(user.password==passwordEncrypted){
               aux='ok';
             }else{
@@ -49,6 +49,7 @@ export class LoginComponent {
           }else{
             aux='co';
           }
+          console.log(aux)
           if(aux=='ok'){
             (<HTMLInputElement>document.getElementById("userName")).value="";
             (<HTMLInputElement>document.getElementById("password")).value="";
@@ -61,6 +62,8 @@ export class LoginComponent {
             this._snackBar.open("Correo no encontrado", "Cerrar",{duration:3000});
           }
           
+        }else{
+          this._snackBar.open("El usuario no existe", "Cerrar",{duration:3000});
         }
         
       }else{
