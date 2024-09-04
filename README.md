@@ -1,4 +1,5 @@
-# Proyecto de Página Web Reactiva para 'El Granero'
+
+ # Proyecto de Página Web Reactiva para 'El Granero'
 
 Este proyecto está dividido en dos partes: el frontend desarrollado con Angular y el backend desarrollado con Java. El objetivo del proyecto es crear una página web reactiva para un bar, donde tanto el menú como los usuarios se almacenan en una base de datos MySQL.
 
@@ -18,57 +19,53 @@ Este proyecto está dividido en dos partes: el frontend desarrollado con Angular
 ## Instalación y Configuración
 
 ### Requisitos Previos
-- **Java JDK** (versión recomendada: 11 o superior)
-- **Maven** (versión recomendada: 3.6.0 o superior)
-- **Node.js** (versión recomendada: 14.x o superior)
-- **MySQL** (versión recomendada: 8.x)
-- **Angular CLI** (versión recomendada: 12.x o superior)
+- **Java JDK** 
+- **Maven** 
+- **Node.js** 
+- **MySQL** 
+- **Angular CLI** 
 
-### Clonación del Proyecto
+## Clonación del Proyecto
 1. Clona el repositorio en tu máquina local:
-   git clone https://github.com/AntonioMallen/ProyectoGranero.git
+   ```git clone https://github.com/AntonioMallen/ProyectoGranero.git ```
    
    
-# Backend - Java
+### Backend - Java
 
-# 1. Abrir el proyecto en IntelliJ IDEA:
-    - Abre IntelliJ IDEA y selecciona "Open" para abrir la carpeta del proyecto clonado.
+#### 1. Abrir el proyecto en IntelliJ IDEA:
+ - Abre IntelliJ IDEA y selecciona "Open" para abrir la carpeta del proyecto clonado.
 
-# 2. Configurar Maven:
-    - IntelliJ detectará automáticamente el archivo pom.xml y configurará Maven. Si no lo hace, asegúrate de que Maven esté 
-      correctamente instalado y configurado.
-    - En la terminal de IntelliJ, navega a la carpeta del proyecto y ejecuta el siguiente comando para instalar las dependencias:
-mvn clean install
+#### 2. Configurar Maven:
+ - IntelliJ detectará automáticamente el archivo pom.xml y configurará Maven. Si no lo hace, asegúrate de que Maven esté 
+   correctamente instalado y configurado.
+ - En la terminal de IntelliJ, navega a la carpeta del proyecto y ejecuta el siguiente comando para instalar las dependencias:
 
-# 3. Configurar la base de datos MySQL:
-    - Accede al archivo src/main/resources/application.properties y ajusta las propiedades de conexión a la base de datos, 
-      incluyendo el nombre de la base de datos, el usuario y la contraseña.
-    - Asegúrate de que la base de datos esté corriendo y que hayas creado la base de datos necesaria.
+```bash mvn clean install ```
 
-# 4. Ejecutar la aplicación:
-    - Puedes ejecutar la aplicación directamente desde IntelliJ IDEA utilizando la configuración de Spring Boot.
-    - Alternativamente, puedes usar Maven para ejecutar la aplicación:
-```bash
-mvn spring-boot:run
-```
+#### 3. Configurar la base de datos MySQL:
+ - Accede al archivo src/main/resources/application.properties y ajusta las propiedades de conexión a la base de datos, 
+   incluyendo el nombre de la base de datos, el usuario y la contraseña.
+ - Asegúrate de que la base de datos esté corriendo y que hayas creado la base de datos necesaria.
 
-# Frontend - Angular
+#### 4. Ejecutar la aplicación:
+ - Puedes ejecutar la aplicación directamente desde IntelliJ IDEA utilizando la configuración de Spring Boot.
+ - Alternativamente, puedes usar Maven para ejecutar la aplicación:
+```bash mvn spring-boot:run ```
 
-# 1. Abrir el proyecto en Visual Studio Code:
-    - Abre Visual Studio Code y selecciona "Open Folder" para abrir la carpeta frontend dentro del proyecto clonado.
+### Frontend - Angular
 
-# 2. Instalar dependencias con npm:
-    - En la terminal de Visual Studio Code, asegúrate de estar en la carpeta del frontend (cd frontend) y ejecuta:
-```bash
-npm install
-```
+#### 1. Abrir el proyecto en Visual Studio Code:
+ - Abre Visual Studio Code y selecciona "Open Folder" para abrir la carpeta frontend dentro del proyecto clonado.
 
-# 3. Iniciar el servidor de desarrollo:
-    - Una vez instaladas las dependencias, inicia el servidor de desarrollo de Angular con:
-```bash
-ng serve```
+#### 2. Instalar dependencias con npm:
+- En la terminal de Visual Studio Code, asegúrate de estar en la carpeta del frontend (cd frontend) y ejecuta:
+```bash npm install```
 
-    - Por defecto, la aplicación estará disponible en http://localhost:4200.
+#### 3. Iniciar el servidor de desarrollo:
+- Una vez instaladas las dependencias, inicia el servidor de desarrollo de Angular con: ```ng serve```
+
+
+- Por defecto, la aplicación estará disponible en ```http://localhost:4200```.
 
 
 ## Uso
